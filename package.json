@@ -2,11 +2,10 @@
   "name": "p08-gulp-website",
   "version": "1.0.0",
   "description": "Compile, serve a website, and watch for SCSS changes for an easier development process",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "del": "^3.0.0",
+    "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.5.0",

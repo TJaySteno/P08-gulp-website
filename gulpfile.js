@@ -44,8 +44,8 @@
       .pipe(maps.init())
         .pipe(concat('global.js'))
         .pipe(uglify())
-      .pipe(maps.write())
-      .pipe(rename("all.min.js"))
+        .pipe(rename("all.min.js"))
+      .pipe(maps.write('./maps'))
       .pipe(gulp.dest(options.dist + '/scripts')); });
 
   // 'gulp styles': compile SCSS into CSS, concat & minify, then copy to ./dist/styles/all.min.css
@@ -54,8 +54,8 @@
       .pipe(maps.init())
         .pipe(sass())
         .pipe(cleanCSS({compatibility: 'ie8'}))
-      .pipe(maps.write())
-      .pipe(rename("all.min.css"))
+        .pipe(rename("all.min.css"))
+      .pipe(maps.write('./maps'))
       .pipe(gulp.dest(options.dist + '/styles')); });
 
   // 'gulp images': optimize images and copy into ./dist/content

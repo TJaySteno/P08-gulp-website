@@ -6,22 +6,22 @@
   ********************************************************/
 
   // Require dependencies
-  const gulp     = require('gulp');
-  const del      = require('del');
+  const gulp = require('gulp');
+  const del = require('del');
   const cleanCSS = require('gulp-clean-css');
-  const concat   = require('gulp-concat');
-  const connect  = require('gulp-connect');
+  const concat = require('gulp-concat');
+  const connect = require('gulp-connect');
   const imagemin = require('gulp-imagemin');
-  const rename   = require("gulp-rename");
-  const replace  = require('gulp-replace');
-  const sass     = require('gulp-sass');
-  const maps     = require('gulp-sourcemaps');
-  const uglify   = require('gulp-uglify');
+  const rename = require('gulp-rename');
+  const replace = require('gulp-replace');
+  const sass = require('gulp-sass');
+  const maps = require('gulp-sourcemaps');
+  const uglify = require('gulp-uglify');
 
   // Locations of src and dist directories
   const options = {
     src: './src',
-    dist: './dist'
+    dist: './dist',
   };
 
   /********************************************************
@@ -44,7 +44,7 @@
       .pipe(maps.init())
         .pipe(concat('global.js'))
         .pipe(uglify())
-        .pipe(rename("all.min.js"))
+        .pipe(rename('all.min.js'))
       .pipe(maps.write('./maps'))
       .pipe(gulp.dest(options.dist + '/scripts')); });
 
@@ -53,8 +53,8 @@
     return gulp.src(options.src + '/sass/**/*.scss')
       .pipe(maps.init())
         .pipe(sass())
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(rename("all.min.css"))
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(rename('all.min.css'))
       .pipe(maps.write('./maps'))
       .pipe(gulp.dest(options.dist + '/styles')); });
 
@@ -77,11 +77,11 @@
   ********************************************************/
 
   // 'gulp connect': start a local web server on port 3000
-  gulp.task('connect', function() {
+  gulp.task('connect', function () {
     connect.server({
       root: './dist',
       livereload: true,
-      port: 3000 }); });
+      port: 3000, }); });
 
   // 'gulp loadNewStyles': call 'gulp styles'; once complete, refresh the browser
   gulp.task('loadNewStyles', ['styles'], function () {
@@ -92,7 +92,11 @@
   gulp.task('watch', function () {
     gulp.watch([options.src + '/sass/**/*.scss'], ['loadNewStyles']); });
 
-  // 'gulp': build the page, then serve project on a local web server and watch for changes to Sass files
+  /*
+    'gulp':
+      build the page,
+      then serve project on a local web server
+      then watch for changes to Sass files */
   gulp.task('default', ['build'], function () {
     gulp.start(['connect', 'watch']); });
 })();

@@ -4,17 +4,17 @@
   "description": "Compile, serve a website, and watch for SCSS changes for an easier development process",
   "dependencies": {},
   "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.9.3",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.5.0",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.6.1",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0"
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
   },
   "author": "Trent Stenoien",
   "license": "ISC"

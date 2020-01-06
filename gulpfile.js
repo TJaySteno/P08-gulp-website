@@ -89,7 +89,6 @@ function dial(cb) {
 function watcher(cb) {
   watch([options.src + '/sass/**/*.scss'])
     .on('change', styles);
-    // .on('change', series(styles));
   cb();
 };
 
